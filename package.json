@@ -1,0 +1,22 @@
+{
+ "name": "chat-app",
+ "version": "0.0.1",
+ "description": "multiroom chat server",
+ "scripts": {
+ "test": "gulp test"
+ },
+ "repository": {
+ "type": "git",
+ "url": "https://github.com/JeffWeim/chat-app.git"
+ },
+ "author": "Jeff Weimer, Victoria Garcia",
+ "license": "ISC",
+ "bugs": {
+ "url": "https://github.com/JeffWeim/chat-app/issues"
+ },
+ "homepage": "https://github.com/JeffWeim/chat-app",
+ "dependencies": {
+    "socket.io": "~0.9.6",
+    "mime": "~1.2.7"
+    }
+}
