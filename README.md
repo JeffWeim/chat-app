@@ -6,6 +6,6 @@ This chat application is based on an example from Node.js In Action (http://dl.e
 
 1. Clone this repo to your local environment.
 
-2. To spin up local server, type `$ DEBUG=myapp npm start` (Mac)
+2. To spin up local server, type `node server.js` (Mac)
 
 3. Point browser to `localhost:3000`

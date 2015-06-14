@@ -4,7 +4,30 @@ var path = require('path');
 var mime = require('mime');
 var cache = {};
 
-// HELPER FUNCTIONS
+
+// CREATE HTTP SERVER
+
+//http server
+var server = http.createServer(function(req, res) {
+	var filePath = false;
+
+	if (req.url == '/') {
+		filePath = 'public/index.html';
+	} else {
+		filePath = 'public' + req.url;
+	}
+	var absPath = './' + filePath;
+	serveStatic(res, cache, absPath);
+});
+
+//start the server
+server.listen(3000, function() {
+	console.log("Server listening on port 3000");
+});
+
+// HELPER FUNCTIONS...
+
+//send 404 error message
 function send404(res) {
 	res.writeHead(404, {
 		'Content-Type': 'text-plain'
@@ -23,10 +46,10 @@ function sendFile(res, filePath, fileContents) {
 	res.end(fileContents);
 }
 
-//serves static files
+//serves static files; check cache first for static files
 function serveStatic(res, cache, absPath) {
 	if (cache[absPath]) {
-		sendFile(res, absPath, cache[absPath]); //call to line 17
+		sendFile(res, absPath, cache[absPath]); //Fn call to line 17
 	} else {
 		fs.exists(absPath, function(exists) {
 			if (exists) {
