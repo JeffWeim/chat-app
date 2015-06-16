@@ -40,3 +40,5 @@ gulp.task('watch', function() {
   gulp.watch('public/**/*.css', ['browserify-public']);
   gulp.watch('/server.js', ['browserify-server']);
 });
+
+gulp.task('default', ['test', 'build', 'watch']);
