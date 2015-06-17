@@ -35,10 +35,8 @@ gulp.task('lint-lib', function() {
 });
 
 gulp.task('watch', function() {
+  gulp.watch('/server.js', ['browserify-server']);
   gulp.watch('lib/**/*.js', ['browserify-lib']);
   gulp.watch('public/**/*.js', ['browserify-public']);
   gulp.watch('public/**/*.css', ['browserify-public']);
-  gulp.watch('/server.js', ['browserify-server']);
 });
-
-gulp.task('default', ['test', 'build', 'watch']);

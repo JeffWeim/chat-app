@@ -67,3 +67,8 @@ function serveStatic(res, cache, absPath) {
 		});
 	}
 }
+
+//setup module to supply logic to handle Socket.IO server
+var chatServer = require('socket.io');
+//start Socket.IO server functionality; provide defined HTTP server
+chatServer.listen(server);
