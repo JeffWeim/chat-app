@@ -5,8 +5,8 @@ var gulp = require('gulp');
 var rename = require('gulp-rename');
 
 var browserSync = require('browser-sync').create();
-var reload      = browserSync.reload;
-var _           = require("lodash");
+var reload = browserSync.reload;
+var _ = require("lodash");
 
 // Build Dependencies
 var browserify = require('gulp-browserify');
@@ -45,11 +45,11 @@ gulp.task('serve', function () {
     // Serve files from the root of this project
     browserSync.init({
         server: {
-            baseDir: ["./public", "./lib", "/chat-app"]
+            baseDir: "./public"
         }
     });
 
     gulp.watch("./public/*.html").on("change", browserSync.reload);
-    gulp.watch("./public/javascripts/*.js").on("change", browserSync.reload);
-    gulp.watch("./public/stylesheets/*.css").on("change", browserSync.reload);
+    //gulp.watch("./public/javascripts/*.js").on("change", browserSync.reload);
+    //gulp.watch("./public/stylesheets/*.css").on("change", browserSync.reload);
 });
