@@ -6,6 +6,7 @@ var rename = require('gulp-rename');
 
 var browserSync = require('browser-sync').create();
 var reload      = browserSync.reload;
+var _           = require("lodash");
 
 // Build Dependencies
 var browserify = require('gulp-browserify');
@@ -37,12 +38,7 @@ gulp.task('lint-lib', function() {
     .pipe(jshint.reporter('default'));
 });
 
-gulp.task('watch', function() {
-  gulp.watch('/server.js', ['browserify-server']);
-  gulp.watch('lib/**/*.js', ['browserify-lib']);
-  gulp.watch('public/**/*.js', ['browserify-public']);
-  gulp.watch('public/**/*.css', ['browserify-public']);
-});
+
 
 gulp.task('serve', function () {
 
